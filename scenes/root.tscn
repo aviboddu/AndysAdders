@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dslepn5xm5nh0"]
+[gd_scene load_steps=2 format=3 uid="uid://dslepn5xm5nh0"]
+
+[ext_resource type="Script" uid="uid://2bkavfu2aymt" path="res://scenes/ui/TabButton.gd" id="1_j5px3"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -7,3 +9,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="UI" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabButtons" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Adders" type="Button" parent="UI/TabButtons" node_paths=PackedStringArray("tab")]
+layout_mode = 2
+text = "Adders"
+script = ExtResource("1_j5px3")
+tab = NodePath("../../Tabs/Adders")
+
+[node name="Automation" type="Button" parent="UI/TabButtons" node_paths=PackedStringArray("tab")]
+layout_mode = 2
+text = "Automation"
+script = ExtResource("1_j5px3")
+tab = NodePath("../../Tabs/Automation")
+
+[node name="Statistics" type="Button" parent="UI/TabButtons" node_paths=PackedStringArray("tab")]
+layout_mode = 2
+text = "Statistics"
+script = ExtResource("1_j5px3")
+tab = NodePath("../../Tabs/Statistics")
+
+[node name="Options" type="Button" parent="UI/TabButtons" node_paths=PackedStringArray("tab")]
+layout_mode = 2
+text = "Options"
+script = ExtResource("1_j5px3")
+tab = NodePath("../../Tabs/Options")
+
+[node name="About" type="Button" parent="UI/TabButtons" node_paths=PackedStringArray("tab")]
+layout_mode = 2
+text = "About"
+script = ExtResource("1_j5px3")
+tab = NodePath("../../Tabs/About")
+
+[node name="Tabs" type="PanelContainer" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Adders" type="ScrollContainer" parent="UI/Tabs"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Tabs/Adders"]
+custom_minimum_size = Vector2(0, 1080)
+layout_mode = 2
+
+[node name="Automation" type="ScrollContainer" parent="UI/Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Tabs/Automation"]
+custom_minimum_size = Vector2(0, 1080)
+layout_mode = 2
+
+[node name="Statistics" type="ScrollContainer" parent="UI/Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Tabs/Statistics"]
+custom_minimum_size = Vector2(0, 1080)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="UI/Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Tabs/Options"]
+custom_minimum_size = Vector2(0, 1080)
+layout_mode = 2
+
+[node name="About" type="ScrollContainer" parent="UI/Tabs"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Tabs/About"]
+custom_minimum_size = Vector2(0, 1080)
+layout_mode = 2
